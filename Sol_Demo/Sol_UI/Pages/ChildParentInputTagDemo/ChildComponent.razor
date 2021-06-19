@@ -1,0 +1,31 @@
+﻿<input type="text" value="@this.FirstName" @onchange="OnFirstNameChanged" />
+
+<h4>Child:@FirstName</h4>
+
+@code {
+
+    #region Method 1
+
+    [Parameter]
+    public String FirstName
+    {
+        get; set;
+    }
+
+    [Parameter]
+    public EventCallback<String> FirstNameChanged { get; set; }
+
+    [Parameter]
+    public Action<String> OnChange { get; set; }
+
+    private async Task OnFirstNameChanged(ChangeEventArgs changeEventArgs)
+    {
+        this.FirstName = changeEventArgs.Value.ToString();
+        await FirstNameChanged.InvokeAsync(this.FirstName);
+
+        OnChange?.Invoke(this.FirstName);
+        base.StateHasChanged();
+    }
+    #endregion
+
+}

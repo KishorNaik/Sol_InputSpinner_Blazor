@@ -1,0 +1,26 @@
+﻿<ChildComponent @ref="this.ChildComponent1" @bind-FirstName="this.FirstName"
+                OnChange="OnChangeEventHandler"></ChildComponent>
+<button @onclick="this.OnSubmit" class="btn btn-primary">Submit</button>
+
+<h3> Parent:@FirstName</h3>
+
+@code {
+
+    private ChildComponent ChildComponent1 { get; set; }
+
+    private string FirstName { get; set; }
+
+    #region Event Handler
+    private void OnSubmit()
+    {
+        FirstName = "Eshaan";
+        base.StateHasChanged();
+    }
+
+    private void OnChangeEventHandler(string data)
+    {
+        this.FirstName = data;
+        base.StateHasChanged();
+    }
+    #endregion
+}

@@ -1,0 +1,37 @@
+﻿<div class="container">
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label>Input Spinner Rs: @this.ValueRuppes</label>
+                <InputSpinnerComponent @ref="this.InputSpinnerCompValueRupess"
+                                       Min="0"
+                                       Max="100"
+                                       Prefix="₹"
+                                       Decimals="0"
+                                       @bind-SpinnerValue="this.ValueRuppes"
+                                       OnChangeEventHandler="this.InputSpinnerCompValueRupess_OnChange"></InputSpinnerComponent>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <button class="btn btn-dark" @onclick="this.InputSpinnerCompValueRupess_OnSubmit">Set ₹</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-4">
+            <div class="form-group">
+                <label>Input Spinner Degree:@this.ValueDegree </label>
+                <InputSpinnerComponent @ref="this.InputSpinnerCompValueDegree"
+                                       Min="-100"
+                                       Max="100"
+                                       Step="1"
+                                       Prefix="°C"
+                                       Decimals="0"
+                                       @bind-SpinnerValue="this.ValueDegree"
+                                       OnChangeEventHandler="this.InputSpinnerCompValueDegree_OnChange"></InputSpinnerComponent>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <button class="btn btn-dark" @onclick="this.InputSpinnerCompValueDegree_OnSubmit">Set °C</button>
+        </div>
+    </div>
+</div>

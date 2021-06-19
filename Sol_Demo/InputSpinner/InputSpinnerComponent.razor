@@ -1,0 +1,11 @@
+﻿<input @ref="this.InputElementReference"
+       min="@this.Min"
+       max="@this.Max"
+       value="@this.SpinnerValue"
+       @onchange="this.OnChangeInput"
+       data-decimals="@this.Decimals"
+       data-prefix="@this.Prefix"
+       data-suffix="@this.Suffix"
+       step="@this.Step" />
+
+@*value attribute Not Working because jquery input spinner plugins*@
